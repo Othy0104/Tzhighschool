@@ -85,6 +85,8 @@ header h1 a {
     display: flex;
     justify-content: space-around; /* アイテム間のスペースを均等に配置 */
     background-color: #333;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 /* メニュー項目 */
@@ -93,13 +95,14 @@ header h1 a {
     padding: 10px 20px;
     margin: 0;
     border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
     color: white;
 }
 
-.main-menu ul li:last-child {
-    border-right: none; /* 最後の項目の右側に線を付けない */
-}
-
+/*.main-menu ul li:last-child {*/
+    /*border-right: none;*/
+    /*border-left: none;*/
+/*}*/
 /* サブメニュー */
 .main-menu ul li .sub-menu {
     display: none;
