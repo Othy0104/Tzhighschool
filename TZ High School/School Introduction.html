@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>学校紹介</h1>
+        <h1><a href="#">学校紹介</a></h1>
 
         <div class="sns-links">
             <ul>
@@ -92,18 +92,25 @@
     <section class="news-section">
         <h1>NEWS</h1>
         <p class="subtitle">最新情報</p>
+        <a href="#topics">一覧を見る</a>
 
         <!-- カテゴリーボタン -->
         <div class="news-categories">
-            <button class="category-button active">すべて</button>
-            <button class="category-button">入試情報</button>
-            <button class="category-button">就職情報</button>
-            <button class="category-button">お知らせ</button>
-            <button class="category-button">アニメ・マンガ学部</button>
-            <button class="category-button">プレスリリース</button>
+            <nav>
+                <ul>
+                    <li><a href="#">すべて</a></li>
+                    <li><a href="#">入試情報</a></li>
+                    <li><a href="#">就職情報</a></li>
+                    <li><a href="#">おしらせ</a></li>
+                    <li><a href="#">OW</a></li>
+                    <li><a href="#">APEX</a></li>
+                    <li><a href="#">VRChat</a></li>
+                    <li><a href="#">バレーボール</a></li>
+                </ul>
+            </nav>
         </div>
-    
-        <!-- ニュース項目 -->
+
+        <!-- ニュース項目
         <div class="news-items">
             <div class="news-item">
                 <img src="image1.jpg" alt="ニュース画像">
@@ -123,9 +130,14 @@
                     <button class="news-category">お知らせ</button>
                 </div>
             </div>
-            <!-- 他のニュース項目 -->
-            </div>
-        </section>
+        </div> -->
+
+        <div id="newsList">
+            <!-- ニュース項目がここに動的に追加されます -->
+        </div>
+
+        <script src="news.js"></script>
+    </section>
     <section id="news">
         <h2>ニュース</h2>
         <p>最新のニュースやイベント情報。</p>

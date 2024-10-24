@@ -10,6 +10,11 @@ header {
     padding: 10px;
 }
 
+header h1 a {
+    color: white; /* 文字の色を白に設定 */
+    text-decoration: none; /* リンクの下線を消す */
+}
+
 .sns-links {
     position: absolute;
     top: 20px; /* お好みの位置に調整 */
@@ -132,6 +137,72 @@ main {
     padding: 20px;
 }
 
+/* ニュースセクション全体 */
+.news-section {
+    padding: 20px;
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+}
+
+/* NEWSのタイトル */
+.news-section h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.news-section .subtitle {
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* "一覧を見る" のリンク */
+.news-section a {
+    float: right;
+    color: #9a9a9a;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.news-section a:hover {
+    text-decoration: underline;
+}
+
+/* カテゴリーボタンのスタイル */
+.news-categories {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.news-categories nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* ボタンが画面幅を超えた場合に折り返し */
+}
+
+.news-categories nav ul li {
+    margin: 0;
+}
+
+.news-categories nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #9a9a9a;
+    border: 2px solid #9a9a9a;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.news-categories nav ul li a:hover {
+    background-color: #a1a1a1;
+    color: white;
+}
+
 footer {
     background-color: #333;
     color: white;
@@ -142,7 +213,6 @@ footer {
     bottom: 0;
     clear: both; /* フロートの影響を排除 */
 }
-
 
 @media (max-width: 600px) {
     .main-menu ul {
