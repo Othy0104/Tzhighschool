@@ -206,6 +206,123 @@ main {
     color: white;
 }
 
+/* ニュースリスト全体 */
+#newsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 自動的に列を調整 */
+    gap: 20px; /* カード間の余白 */
+    padding: 20px;
+    background-color: #f9f9f9;
+    max-width: 1200px;
+    margin: 0 auto; /* 中央寄せ */
+}
+
+/* ニュースカードのスタイル */
+.news-item {
+    background-color: white;
+    border-radius: 8px; /* 角を丸める */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影を追加して浮き上がらせる */
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.news-item:hover {
+    transform: translateY(-5px); /* ホバー時に浮き上がる */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* ホバー時の影を強調 */
+}
+
+/* ニュースタイトル */
+.news-item h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* 日付のスタイル */
+.news-item p:nth-of-type(1) {
+    font-size: 0.9rem;
+    color: #999; /* 日付の色を淡くする */
+    margin-bottom: 10px;
+}
+
+/* 説明文のスタイル */
+.news-item p:nth-of-type(2) {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* ページネーションボタンのスタイル */
+#pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-btn {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination-btn:hover {
+    background-color: #ddd;
+}
+
+.pagination-btn.active {
+    background-color: #333;
+    color: white;
+}
+
+/* ルールリスト全体 */
+#ruleList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 自動的に列を調整 */
+    gap: 20px; /* カード間の余白 */
+    padding: 20px;
+    background-color: #f9f9f9;
+    max-width: 1200px;
+    margin: 0 auto; /* 中央寄せ */
+}
+
+/* ニュースカードのスタイル */
+.rules-item {
+    background-color: white;
+    border-radius: 8px; /* 角を丸める */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影を追加して浮き上がらせる */
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.rules-item:hover {
+    transform: translateY(-5px); /* ホバー時に浮き上がる */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* ホバー時の影を強調 */
+}
+
+/* ニュースタイトル */
+.rules-item h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* 日付のスタイル */
+.rules-item p:nth-of-type(1) {
+    font-size: 0.9rem;
+    color: #999; /* 日付の色を淡くする */
+    margin-bottom: 10px;
+}
+
+/* 説明文のスタイル */
+.rules-item p:nth-of-type(2) {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+}
+
 footer {
     background-color: #333;
     color: white;
