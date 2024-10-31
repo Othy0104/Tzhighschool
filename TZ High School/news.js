@@ -1,12 +1,12 @@
 const newsPerPage = 4; // 1ページに表示するニュースの数
-let currentPage = 1;    // 現在のページ
+let newsCurrentPage = 1;    // 現在のページ
 
 // JSONファイルを読み込んで、ニュースリストを表示する関数
 fetch('news.json')
     .then(response => response.json())
     .then(data => {
         const totalPages = Math.ceil(data.length / newsPerPage); // 総ページ数を計算
-        displayNews(data, currentPage, newsPerPage);             // 初期ページのニュースを表示
+        displayNews(data, newsCurrentPage, newsPerPage);             // 初期ページのニュースを表示
         setupPagination(data, totalPages);                        // ページネーションを設定
     })
     .catch(error => console.error('Error fetching news:', error));
@@ -49,14 +49,14 @@ function setupPagination(data, totalPages) {
         pageButton.textContent = i;
         pageButton.classList.add('pagination-btn');
 
-        if (i === currentPage) {
+        if (i === newsCurrentPage) {
             pageButton.classList.add('active'); // 現在のページにハイライトをつける
         }
 
         // ページボタンがクリックされた時の処理
         pageButton.addEventListener('click', function () {
-            currentPage = i;
-            displayNews(data, currentPage, newsPerPage);
+            newsCurrentPage = i;
+            displayNews(data, newsCurrentPage, newsPerPage);
             updatePagination(totalPages);
         });
 
@@ -68,7 +68,7 @@ function setupPagination(data, totalPages) {
 function updatePagination(totalPages) {
     const buttons = document.querySelectorAll('.pagination-btn');
     buttons.forEach((button, index) => {
-        if (index + 1 === currentPage) {
+        if (index + 1 === newsCurrentPage) {
             button.classList.add('active');
         } else {
             button.classList.remove('active');

@@ -277,6 +277,22 @@ main {
     color: white;
 }
 
+/* ルールのタイトル */
+.rule h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* "ルールタイトル" のリンク */
+.rule h1 a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.rule h1 a:hover {
+    text-decoration: underline;
+}
+
 /* ルールリスト全体 */
 #ruleList {
     display: grid;
@@ -288,21 +304,23 @@ main {
     margin: 0 auto; /* 中央寄せ */
 }
 
-/* ニュースカードのスタイル */
+/* ルールカードのスタイル */
 .rules-item {
     background-color: white;
     border-radius: 8px; /* 角を丸める */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影を追加して浮き上がらせる */
     padding: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
 }
 
 .rules-item:hover {
     transform: translateY(-5px); /* ホバー時に浮き上がる */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* ホバー時の影を強調 */
+    text-decoration: underline;
 }
 
-/* ニュースタイトル */
+/* ルールタイトル */
 .rules-item h2 {
     font-size: 1.5rem;
     color: #333;

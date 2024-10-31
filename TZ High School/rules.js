@@ -1,24 +1,24 @@
-const rulesPerPage = 2; // 1ページに表示するニュースの数
-let currentPage = 1;    // 現在のページ
+const rulesPerPage = 2; // 1ページに表示するルールの数
+let rulesCurrentPage = 1;    // 現在のページ
 
 // JSONファイルを読み込んで、ルールリストを表示する関数
 fetch('rules.json')
     .then(response => response.json())
     .then(data => {
         const totalPages = Math.ceil(data.length / rulesPerPage); // 総ページ数を計算
-        displayRules(data, currentPage, rulesPerPage);             // 初期ページのニュースを表示
-        setupPagination(data, totalPages);                        // ページネーションを設定
+        displayRules(data, rulesCurrentPage, rulesPerPage);             // 初期ページのルールを表示
+        setupRulesPagination(data, totalPages);                    // ページネーションを設定
     })
     .catch(error => console.error('Error fetching rules:', error));
 
-    // ルールを表示する関数
+// ルールを表示する関数
 function displayRules(data, page, rulesPerPage) {
     const rulesList = document.getElementById('ruleList');
     rulesList.innerHTML = '';  // 現在表示されているルールをクリア
 
     const startIndex = (page - 1) * rulesPerPage;
     const endIndex = page * rulesPerPage;
-    const paginatedItems = data.slice(startIndex, endIndex); // 現在のページのニュースを取得
+    const paginatedItems = data.slice(startIndex, endIndex); // 現在のページのルールを取得
 
     paginatedItems.forEach(rule => {
         const rulesLink = document.createElement('a');
@@ -36,5 +36,41 @@ function displayRules(data, page, rulesPerPage) {
 
         rulesLink.appendChild(rulesItem);
         rulesList.appendChild(rulesLink);
+    });
+}
+
+// ページネーションを設定する関数
+function setupRulesPagination(data, totalPages) {
+    const pagination = document.getElementById('rulePagination');
+    pagination.innerHTML = '';  // ページネーションをクリア
+
+    for (let i = 1; i <= totalPages; i++) {
+        const pageButton = document.createElement('button');
+        pageButton.textContent = i;
+        pageButton.classList.add('pagination-btn');
+
+        if (i === rulesCurrentPage) {
+            pageButton.classList.add('active'); // 現在のページにハイライトをつける
+        }
+
+        pageButton.addEventListener('click', function () {
+            rulesCurrentPage = i;
+            displayRules(data, rulesCurrentPage, rulesPerPage);
+            updateRulesPagination(totalPages);
+        });
+
+        pagination.appendChild(pageButton);
+    }
+}
+
+// 現在のページをハイライトする関数
+function updateRulesPagination(totalPages) {
+    const buttons = document.querySelectorAll('#rulePagination .pagination-btn');
+    buttons.forEach((button, index) => {
+        if (index + 1 === rulesCurrentPage) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
     });
 }
